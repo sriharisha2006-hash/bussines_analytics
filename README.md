@@ -1,74 +1,72 @@
 # bussines_analytics
 # 💳 Credit Scoring Model for Loan Applicants
 
-## Predicting Credit Risk Using Demographic, Financial and Behavioral Variables
+## Business Analytics Project Using Microsoft Power BI
 
 ---
 
 ## 📌 Project Overview
 
-The **Credit Scoring Model for Loan Applicants** is a Business Analytics and Machine Learning project designed to analyze loan applicant characteristics and predict their credit risk.
+The **Credit Scoring Model for Loan Applicants** is a Business Analytics project developed using **Microsoft Power BI**.
 
-The project uses the **Statlog (German Credit Data)** dataset from the **UCI Machine Learning Repository**.
+The purpose of this project is to analyze loan applicant information and identify patterns associated with **Good and Bad Credit Risk**.
 
-The system analyzes applicant information such as:
+The project uses the **Statlog (German Credit Data)** dataset obtained from the **UCI Machine Learning Repository**.
 
+The analysis focuses on:
+
+- Applicant financial characteristics
 - Credit history
 - Checking account status
 - Loan duration
 - Credit amount
-- Savings status
 - Employment
-- Age
+- Savings
 - Housing
+- Age
 - Existing credits
 - Loan purpose
-- Number of dependents
-- Other financial characteristics
+- Dependents
+- Credit risk
 
-The objective is to classify applicants into:
-
-- 🟢 **Good Credit Risk**
-- 🔴 **Bad Credit Risk**
-
-The project combines:
-
-**Data Collection → Data Preprocessing → EDA → Statistical Analysis → Data Visualization → Machine Learning → Model Evaluation → Business Insights → Decision Support**
+The complete analysis is performed using **Power BI without programming or machine-learning coding**.
 
 ---
 
-# 🎯 Project Objectives
+# 🎯 Project Aim
 
-The major objectives of this project are:
+To analyze loan applicant data using **Microsoft Power BI** and identify factors associated with Good and Bad credit risk to support data-driven credit-risk decision-making.
 
-1. Analyze the characteristics of loan applicants.
-2. Understand the distribution of Good and Bad credit-risk applicants.
-3. Identify financial and behavioral factors associated with credit risk.
-4. Perform data cleaning and preprocessing.
-5. Perform Exploratory Data Analysis (EDA).
-6. Conduct statistical analysis.
-7. Create meaningful data visualizations.
-8. Develop machine-learning models for credit-risk classification.
-9. Compare Logistic Regression and Random Forest.
-10. Evaluate models using multiple performance metrics.
-11. Generate business insights from the analysis.
-12. Provide recommendations for credit-risk decision-making.
+---
+
+# 🎯 Objectives
+
+1. Import the credit-risk dataset into Power BI.
+2. Understand the structure of the dataset.
+3. Perform data cleaning using Power Query.
+4. Analyze Good and Bad credit-risk applicants.
+5. Perform descriptive analysis.
+6. Identify relationships between applicant characteristics and credit risk.
+7. Create interactive visualizations.
+8. Develop a Power BI credit-risk dashboard.
+9. Identify high-risk applicant groups.
+10. Provide business recommendations based on the analysis.
 
 ---
 
 # 🏦 Business Problem
 
-Banks and financial institutions need to determine whether a loan applicant represents a low or high credit risk before approving a loan.
+Financial institutions need to evaluate loan applicants before approving credit.
 
-Incorrect decisions can result in:
+Incorrect credit decisions can result in:
 
 - Financial losses
-- Increased loan defaults
-- Poor risk management
-- Inefficient manual screening
-- Loss of potential good customers
+- Higher credit risk
+- Poor loan portfolio performance
+- Increased manual screening
+- Inefficient risk management
 
-Therefore, this project develops a data-driven credit scoring approach that can help identify applicants who may require additional credit-risk assessment.
+This project uses Power BI to analyze historical credit-risk information and identify patterns that can help financial institutions understand applicant risk.
 
 ---
 
@@ -78,23 +76,21 @@ Therefore, this project develops a data-driven credit scoring approach that can 
 
 **Statlog (German Credit Data)**
 
-## Data Source
-
-The dataset is obtained from the:
+## Dataset Source
 
 **UCI Machine Learning Repository**
 
-Dataset page:
+Dataset:
 
 https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data
 
 ---
 
-## Dataset Size
+# 📋 Dataset Size
 
 | Property | Value |
 |---|---:|
-| Total Records | **1,000** |
+| Total Applicants | **1,000** |
 | Input Variables | **20** |
 | Target Variable | **1** |
 | Total Columns | **21** |
@@ -106,114 +102,102 @@ https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data
 
 # 🎯 Target Variable
 
-The original dataset contains a credit-risk target.
+The dataset contains a **Credit Risk** target.
 
-### Original Encoding
-
-| Value | Meaning |
-|---:|---|
-| `1` | Good Credit Risk |
-| `2` | Bad Credit Risk |
-
-For machine-learning modelling, the target is transformed into:
+### Original Target
 
 | Value | Meaning |
 |---:|---|
-| `0` | Good Credit Risk |
-| `1` | Bad Credit Risk |
+| 1 | Good Credit Risk |
+| 2 | Bad Credit Risk |
 
-The model therefore predicts whether an applicant belongs to the **Bad Credit Risk** category.
+For Power BI analysis, the target can be displayed as:
 
-> **Note:** The original UCI dataset contains a Good/Bad credit-risk classification rather than a direct historical default field. Therefore, this project uses "Bad Credit Risk" as the modelling target.
+| Credit Risk | Meaning |
+|---|---|
+| Good | Lower observed credit risk |
+| Bad | Higher observed credit risk |
+
+> **Important:** The original dataset represents Good/Bad credit risk rather than a direct historical default field.
 
 ---
 
-# 📋 Dataset Features
+# 📋 Dataset Variables
 
-| Feature | Type | Description |
+| Variable | Type | Description |
 |---|---|---|
-| Checking Account Status | Categorical | Existing checking-account status |
-| Duration | Numerical | Loan duration in months |
+| Checking Account Status | Categorical | Status of checking account |
+| Duration | Numeric | Loan duration in months |
 | Credit History | Categorical | Previous credit history |
-| Purpose | Categorical | Purpose of the credit |
-| Credit Amount | Numerical | Amount of credit requested |
-| Savings Account/Bonds | Categorical | Savings/bond status |
-| Employment | Categorical | Employment duration/status |
-| Installment Rate | Numerical | Installment rate as percentage of disposable income |
+| Purpose | Categorical | Purpose of credit |
+| Credit Amount | Numeric | Amount of credit |
+| Savings Account/Bonds | Categorical | Savings status |
+| Employment | Categorical | Employment status/duration |
+| Installment Rate | Numeric | Installment rate |
 | Personal Status and Sex | Categorical | Personal status and sex |
 | Other Debtors/Guarantors | Categorical | Co-applicant/guarantor information |
-| Present Residence Since | Numerical | Years at current residence |
-| Property | Categorical | Property ownership/type |
-| Age | Numerical | Applicant age |
+| Present Residence Since | Numeric | Years at current residence |
+| Property | Categorical | Property type |
+| Age | Numeric | Applicant age |
 | Other Installment Plans | Categorical | Other installment plans |
 | Housing | Categorical | Housing situation |
-| Existing Credits | Numerical | Number of existing credits |
-| Job | Categorical | Applicant's job category |
-| Number of Dependents | Numerical | Number of dependents |
+| Existing Credits | Numeric | Number of existing credits |
+| Job | Categorical | Job category |
+| Number of Dependents | Numeric | Number of dependents |
 | Telephone | Categorical | Telephone availability |
 | Foreign Worker | Categorical | Foreign-worker indicator |
+| Credit Risk | Categorical | Good/Bad credit-risk target |
 
 ---
 
-# 🔄 Project Workflow
+# 🔄 Power BI Project Workflow
 
 ```text
-                    ┌─────────────────────┐
-                    │   Credit Dataset    │
-                    │  1,000 Applicants   │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Data Collection     │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Data Preprocessing  │
-                    │ Cleaning / Encoding │
-                    │ Scaling              │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Exploratory Data    │
-                    │ Analysis (EDA)      │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Statistical         │
-                    │ Analysis            │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Data Visualization  │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-              ┌────────────────────────────────┐
-              │     Machine Learning Models    │
-              ├────────────────┬───────────────┤
-              │ Logistic        │ Random        │
-              │ Regression      │ Forest        │
-              └────────┬────────┴───────┬───────┘
-                       │                │
-                       └───────┬────────┘
-                               ▼
-                    ┌─────────────────────┐
-                    │ Model Evaluation    │
-                    │ Accuracy / Recall   │
-                    │ F1 / ROC-AUC        │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Business Insights   │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │ Recommendations     │
-                    └─────────────────────┘
+                    CREDIT DATASET
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ Import into      │
+                │ Power BI Desktop │
+                └────────┬─────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ Power Query      │
+                │ Data Cleaning    │
+                └────────┬─────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ Data Preparation │
+                │ & Transformation │
+                └────────┬─────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ Exploratory      │
+                │ Data Analysis    │
+                └────────┬─────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ Data             │
+                │ Visualization    │
+                └────────┬─────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ Power BI         │
+                │ Dashboard        │
+                └────────┬─────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ Business         │
+                │ Insights         │
+                └────────┬─────────┘
+                         │
+                         ▼
+                ┌──────────────────┐
+                │ Recommendations  │
+                └──────────────────┘
